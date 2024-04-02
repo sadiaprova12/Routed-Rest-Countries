@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Countries = () => {
     const countries = useLoaderData();
@@ -10,7 +10,7 @@ const Countries = () => {
             <ul>
                 {
                     // eslint-disable-next-line react/jsx-key
-                    countries.map(country => <li>{country.name.common}</li>)
+                    countries.map(country => <li>{country.name.common} <Link to={`/country/${country.cca3}`}>Details</Link></li>)
                 }
             </ul>
         </div>
